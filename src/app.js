@@ -12,7 +12,6 @@ app.use("/test",(req,res)=>{
 app.use("/",(req,res)=>{
   res.send("You are on right port ");
 });
-
 app.listen(7777,()=>{
   console.log('Hello......');
 });
