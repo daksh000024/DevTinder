@@ -1,17 +1,26 @@
 const express = require('express');
 const app = express();
-app.get("/hello/2",(req,res)=>{
-  res.send("Hello 2je bhi Bhaiiiii");
-});   
-app.post("/hello",(req,res)=>{
-  res.send("Hello Bhaiiiiii");
-});
-app.delete("/test",(req,res)=>{
-    res.send("You topped the test");
-});
-app.use("/",(req,res)=>{
-  res.send("You are on right port ");
-});
+app.use("/use",(req,res,next)=>{
+  next();
+  // res.send("You are on the right port ");
+},
+(req,res,next)=>{
+  next();
+  res.send("This is the 2nd port ");
+},
+(req,res,next)=>{
+  next();
+  res.send("This is the 3rd port ");
+},
+(req,res,next)=>{
+  next();
+  res.send("This is the 4th port ");
+},
+(req,res,next)=>{
+  res.send("This is the 5th port ");
+}
+);
+
 app.listen(7777,()=>{
   console.log('Hello......');
 });
