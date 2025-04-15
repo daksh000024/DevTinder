@@ -3,10 +3,10 @@ const app = express();
 app.get("/hello/2",(req,res)=>{
   res.send("Hello 2je bhi Bhaiiiii");
 });   
-app.get("/hello",(req,res)=>{
+app.post("/hello",(req,res)=>{
   res.send("Hello Bhaiiiiii");
 });
-app.use("/test",(req,res)=>{
+app.delete("/test",(req,res)=>{
     res.send("You topped the test");
 });
 app.use("/",(req,res)=>{
